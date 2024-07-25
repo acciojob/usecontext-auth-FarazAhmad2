@@ -1,13 +1,21 @@
+import React, { useState, createContext } from "react";
+import "./../styles/App.css";
+import Auth from "./Auth";
 
-import React from "react";
-import './../styles/App.css';
+export const AuthContext = createContext();
 
 const App = () => {
-  return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+  const [tick, setTick] = useState(false);
 
-export default App
+  const handleChange = () => {
+    setTick(!tick);
+  };
+  return (
+    <AuthContext.Provider value={{ handleChange, tick }}>
+      <h1>Click on the checkbox to get authenticated</h1>
+      <Auth />
+    </AuthContext.Provider>
+  );
+};
+
+export default App;
