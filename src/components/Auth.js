@@ -5,9 +5,9 @@ const Auth = () => {
   const { handleChange, tick } = useContext(AuthContext);
   return (
     <div>
-      <p>
+      <p className="authText">
         {!tick
-          ? "You are not authenticated"
+          ? "you are not authenticated"
           : "You are now authenticated, you can proceed"}
       </p>
       <label>
